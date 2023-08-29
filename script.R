@@ -1,5 +1,5 @@
 # set the working directory
-setwd("C:/Users/SURHUD/Desktop/Desktop/Stats/ReQuir Stats/Dermat Melasma")
+setwd("your/working/directory")
 
 # load required packages
 library(gtsummary) # to create publication ready tables
@@ -9,7 +9,7 @@ library(ggstatsplot) # for publication ready graphs with statistical results
 library(reshape2) # to manipulate and reshape data
 
 # import data
-df <- read.csv("C:/Users/SURHUD/Desktop/Desktop/Stats/ReQuir Stats/Dermat Melasma/data.csv",
+df <- read.csv("your/working/directory/data.csv",
                check.names = FALSE) # this will retain original column names if needed
 df %>% colnames # get column names
 attach(df) # this will attach data in the environment
@@ -20,7 +20,7 @@ table1 <- df[,-c(1)] %>%
 
 table1 %>%
   as_flex_table() %>%
-  save_as_docx(path = "Table1.docx") # save the table as a .docx file to the working directory
+  save_as_docx(path = "Table 1.docx") # save the table as a .docx file to the working directory
 
 # reshape the data from a wide format to a long format for repeated measures
 df1 <- df %>%
